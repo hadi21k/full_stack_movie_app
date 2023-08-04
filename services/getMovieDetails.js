@@ -1,7 +1,7 @@
 export const getMovieDetails = async (movie_id, type) => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/media/media_details/${type}/${movie_id}`,
+      `${process.env.API_URL}/media/media_details/${type}/${movie_id}`,
       {
         next: { revalidate: 120 },
       }
