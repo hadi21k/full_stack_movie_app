@@ -6,7 +6,6 @@ const fetchAndParse = async (url, options) => {
     return await res.json();
   } catch (err) {
     console.error("Error fetching data:", err);
-    return null;
   }
 };
 

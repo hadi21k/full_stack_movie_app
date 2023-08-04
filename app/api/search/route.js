@@ -29,12 +29,11 @@ export const GET = async (req) => {
     if (number) {
       return new Response(JSON.stringify(filteredData.slice(0, number)), {
         status: 200,
+        contentType: "application/json",
       });
     }
 
-    return new Response(JSON.stringify(filteredData), {
-      status: 200,
-    });
+    return new Response(JSON.stringify(filteredData), { status: 200 });
   } catch (err) {
     return new Response(JSON.stringify({ error: err.message }), {
       status: 500,
