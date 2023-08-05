@@ -1,22 +1,15 @@
 import Hero from "@/components/Hero";
 import MoviesList from "@/components/MoviesList";
 import PageHeader from "@/components/PageHeader";
-import {
-  getNowPlaying,
-  getPopular,
-  getPopularTV,
-  getTopRated,
-  getTopRatedTV,
-  getUpcoming,
-} from "@/services/getMedia";
+import { getMedia } from "@/services/getMedia";
 
 export default async function Home({ searchParams }) {
-  const nowPlayingData = getNowPlaying();
-  const popularData = getPopular();
-  const top_ratedData = getTopRated();
-  const upcomingData = getUpcoming();
-  const popularTvData = getPopularTV();
-  const top_ratedDataTv = getTopRatedTV();
+  const nowPlayingData = getMedia("movie", "now_playing");
+  const popularData = getMedia("movie", "popular");
+  const top_ratedData = getMedia("movie", "top_rated");
+  const upcomingData = getMedia("movie", "upcoming");
+  const popularTvData = getMedia("tv", "popular");
+  const top_ratedDataTv = getMedia("tv", "top_rated");
 
   const nowPlaying = await nowPlayingData;
   const popular = await popularData;

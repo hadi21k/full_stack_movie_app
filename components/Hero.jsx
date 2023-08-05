@@ -16,7 +16,9 @@ const Hero = ({ media }) => {
           quality={100}
           priority
           className="rounded-2xl w-auto h-auto cursor-pointer snap-center"
-          onClick={() => router.push(`/media_details/${m.id}`)}
+          onClick={() =>
+            router.push(`/media_details/${m.id}?type=${m.media_type}`)
+          }
         />
       ))}
     </div>

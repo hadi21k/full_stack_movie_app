@@ -1,8 +1,8 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import CollectionsList from "@/components/CollectionsList";
-import { getCollections } from "@/services/getCollections";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+import { getCollections } from "@/services/getCollections";
 
 const page = async () => {
   // if didn't work switch to params

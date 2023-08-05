@@ -1,46 +1,30 @@
-export async function getNowPlaying() {
-  const response = await fetch(
-    `${process.env.API_URL}/media/movie/now_playing`,
-    {
-      next: { revalidate: 120 },
-    }
-  );
-  return response.json();
-}
+export async function getMedia(media_type, query) {
+  try {
+    const url = `https://api.themoviedb.org/3/${media_type}/${query}`;
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${process.env.TMDB_API_KEY}`,
+      },
+    };
 
-export async function getPopular() {
-  const response = await fetch(`${process.env.API_URL}/media/movie/popular`, {
-    next: { revalidate: 120 },
-  });
-  return response.json();
-}
+    const response = await fetch(url, options);
+    const data = await response.json();
 
-export async function getTopRated() {
-  const response = await fetch(`${process.env.API_URL}/media/movie/top_rated`, {
-    next: { revalidate: 120 },
-  });
-  return response.json();
-}
+    const filteredData = data.results.map((media) => {
+      return {
+        id: media.id,
+        title: media.title || media.name,
+        src: `https://image.tmdb.org/t/p/original${
+          media.backdrop_path || media.poster_path
+        }`,
+        media_type: media_type,
+      };
+    });
 
-export async function getUpcoming() {
-  const response = await fetch(`${process.env.API_URL}/media/movie/upcoming`, {
-    next: { revalidate: 120 },
-  });
-  return response.json();
-}
-
-export async function getPopularTV() {
-  const response = await fetch(`${process.env.API_URL}/media/tv/popular`, {
-    next: { revalidate: 120 },
-  });
-  return response.json();
-}
-
-// export getTopRatedTV;
-
-export async function getTopRatedTV(id) {
-  const response = await fetch(`${process.env.API_URL}/media/tv/top_rated`, {
-    next: { revalidate: 120 },
-  });
-  return response.json();
+    return filteredData;
+  } catch (err) {
+    console.error(err);
+  }
 }

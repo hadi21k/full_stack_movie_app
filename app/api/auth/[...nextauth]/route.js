@@ -13,6 +13,8 @@ export const authOptions = {
   callbacks: {
     async session({ session, token }) {
       try {
+        connectToDB();
+
         const user = await User.findOne({ email: session.user.email });
 
         session.user.id = user._id.toString();
