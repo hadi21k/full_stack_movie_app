@@ -6,7 +6,6 @@ import Actor from "./Actor";
 import YoutubeTrailer from "./YoutubeTrailer";
 
 const MovieDetails = ({ data }) => {
-  console.log(data);
   const trailerRef = useRef();
   const getTrailer = data?.videos.filter(
     (video) => video.type === "Trailer"
