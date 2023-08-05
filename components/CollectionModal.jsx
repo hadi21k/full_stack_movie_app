@@ -25,7 +25,6 @@ const CollectionModal = ({ media }) => {
         const res = await fetch(
           `/api/users/${session.user.id}/collections/saved?mediaId=${media.id}`,
           {
-            method: "GET",
             cache: "no-cache",
           }
         );
@@ -52,7 +51,9 @@ const CollectionModal = ({ media }) => {
         <DialogHeader>
           <DialogTitle className="text-white flex items-center justify-between">
             <h1 className="text-lg">Collections</h1>
-            <Link href={`/create_collection/${media.id}?type=${media.media_type}`}>
+            <Link
+              href={`/create_collection/${media.id}?type=${media.media_type}`}
+            >
               <span className="text-sm text-primary">New collection</span>
             </Link>
           </DialogTitle>

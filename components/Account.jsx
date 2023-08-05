@@ -29,13 +29,10 @@ const Account = () => {
       <DropdownMenuContent className="absolute right-0 top-1">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <Link href="/profile">
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-        </Link>
         <Link href="/search">
           <DropdownMenuItem className="md:hidden">Search</DropdownMenuItem>
         </Link>
-        <Link href={`/collections/${session.user.id}`}>
+        <Link href={`/collections`}>
           <DropdownMenuItem className="lg:hidden">Collections</DropdownMenuItem>
         </Link>
         <DropdownMenuItem onClick={() => signOut()}>Sign out</DropdownMenuItem>
