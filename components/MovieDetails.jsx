@@ -17,7 +17,7 @@ const MovieDetails = ({ data }) => {
         trailer={getTrailer}
         trailerRef={trailerRef}
       />
-      <div className="container mx-auto space-y-4">
+      <div className="container mx-auto space-y-4 px-1 sm:px-4">
         {getTrailer?.key && (
           <YoutubeTrailer trailer={getTrailer} trailerRef={trailerRef} />
         )}

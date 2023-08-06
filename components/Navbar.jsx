@@ -17,7 +17,7 @@ const Navbar = () => {
         pathname === "/" ? "lg:ml-[200px]" : ""
       }`}
     >
-      <div className="container h-full mx-auto px-4 flex items-center justify-between">
+      <div className="container h-full mx-auto px-1 sm:px-4 flex items-center justify-between">
         <Link href="/">
           <h1 className="text-primary font-bold">MovieFlex</h1>
         </Link>

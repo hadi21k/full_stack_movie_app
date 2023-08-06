@@ -23,7 +23,7 @@ const CollectionModal = ({ media }) => {
       try {
         setLoading(true);
         const res = await fetch(
-          `/api/users/${session.user.id}/collections/saved?mediaId=${media.id}`,
+          `/api/users/collections/saved?mediaId=${media.id}`,
           {
             cache: "no-cache",
           }
@@ -38,7 +38,7 @@ const CollectionModal = ({ media }) => {
       setLoading(false);
     };
     fetchData();
-  }, [session?.user?.id]);
+  }, [session]);
 
   return (
     <Dialog>

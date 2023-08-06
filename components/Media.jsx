@@ -29,7 +29,8 @@ const Media = ({ media, collectionId }) => {
   return (
     <div
       className={`flex flex-col relative ${
-        !pathname.includes("/search") && "w-[400px]"
+        !pathname.includes("/search") ||
+        (!pathname.includes("/collections") && "w-[400px]")
       }`}
     >
       <Link

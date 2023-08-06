@@ -29,9 +29,7 @@ const Sidebar = () => {
               asChild
               className="flex space-x-2 w-full py-2 rounded-xl items-center justify-start"
             >
-              <Link href="/collections"
-                prefetch={true}
-              >
+              <Link href="/collections">
                 <CircleStackIcon className="w-7 h-7" />
                 <h1 className="font-bold">Collections</h1>
               </Link>

@@ -5,7 +5,6 @@ const PageHeader = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const type = searchParams.get("type");
-  console.log(type);
   return (
     <nav>
       <ul className="flex space-x-4">

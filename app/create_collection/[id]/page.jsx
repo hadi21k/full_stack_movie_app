@@ -2,7 +2,7 @@ import CreateForm from "@/components/CreateForm";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-import { getMovieDetails } from "@/services/getMovieDetails";
+import { getMediaDetails } from "@/services/getMovieDetails";
 
 const page = async ({ params, searchParams }) => {
   // if didn't work switch to params
@@ -11,8 +11,8 @@ const page = async ({ params, searchParams }) => {
   if (!session) {
     redirect("/");
   }
-  const data = await getMovieDetails(params.id, searchParams.type);
-  console.log(data);
+
+  const data = await getMediaDetails(params.id, searchParams.type);
   return (
     <div
       style={{

@@ -73,7 +73,7 @@ const Collection = ({ collection, media }) => {
   };
 
   return (
-    <div className={`${pathname.includes("/collections") && "min-h-[200px]"}`}>
+    <>
       {pathname.includes("/collections") && (
         <Link href={`/collections/collection/${collection._id}`}>
           <div className="relative max-md:min-h-[250px] min-h-[180px]">
@@ -152,7 +152,7 @@ const Collection = ({ collection, media }) => {
           </>
         )}
       </div>
-    </div>
+    </>
   );
 };
 

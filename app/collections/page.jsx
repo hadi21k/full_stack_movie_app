@@ -12,10 +12,10 @@ const page = async () => {
     redirect("/");
   }
 
-  const collectionsData = await getCollections(session.user.id);
+  const collectionsData = await getCollections();
   return (
     <div className="text-white mt-[60px]">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-1 sm:px-4">
         <h1>Collections</h1>
         <CollectionsList data={collectionsData} />
       </div>

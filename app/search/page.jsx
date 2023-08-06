@@ -9,7 +9,7 @@ const page = async ({ searchParams }) => {
   searching = false;
   return (
     <main className="mt-[60px] text-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-1 sm:px-4">
         <SearchInput />
         <div className="space-y-6">
           {!searching ? (

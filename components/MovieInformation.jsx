@@ -20,7 +20,7 @@ const MovieInformation = ({ media, trailer, trailerRef }) => {
       className="min-h-screen flex items-end"
     >
       <div className="min-h-[400px] bg-background/20 w-full flex items-center">
-        <div className="container mx-auto py-4 gap-6 grid md:grid-cols-2 md:place-items-center">
+        <div className="container mx-auto py-4 gap-6 grid md:grid-cols-2 md:place-items-center px-1 sm:px-4">
           <div className="space-y-4">
             <h1 className="sm:text-4xl text-lg font-bold">{media.title}</h1>
             <div className="flex sm:space-x-2 sm:items-center max-sm:flex-col">
