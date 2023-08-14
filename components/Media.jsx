@@ -47,11 +47,12 @@ const Media = ({ media, collectionId }) => {
           <Image
             src={media.src}
             alt={media.title}
-            width={350}
-            height={350}
+            width={300}
+            height={300}
             quality={100}
             className={`rounded-2xl w-full h-auto cursor-pointer
             ${loading && "hidden"}`}
+            priority={true}
             onLoadingComplete={() => setLoading(false)}
           />
           {loading && (

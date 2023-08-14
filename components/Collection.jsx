@@ -26,7 +26,6 @@ const Collection = ({ collection, media }) => {
       body: JSON.stringify({ name }),
     });
     setEditing(false);
-    window.location.reload();
   };
 
   const deleteCollection = async (id) => {
@@ -54,7 +53,6 @@ const Collection = ({ collection, media }) => {
       console.error(error);
     }
     setAdded(true);
-    window.location.reload();
   };
 
   const removeMediaFromCollection = async (id) => {
@@ -69,7 +67,6 @@ const Collection = ({ collection, media }) => {
       console.error(error);
     }
     setAdded(false);
-    window.location.reload();
   };
 
   return (
