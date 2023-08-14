@@ -5,8 +5,7 @@ import { authOptions } from "../../auth/[...nextauth]/route";
 export const GET = async () => {
   try {
     const session = await getServerSession(authOptions);
-    
-    console.log(session);
+
     if (!session) throw new Error("Unauthorized");
 
     const collections = await Collection.find({ userId: session.user.id });
@@ -16,7 +15,7 @@ export const GET = async () => {
     });
   } catch (error) {
     console.error(error);
-    return new Response(JSON.stringify({ message: "Internal Server Error" }), {
+    return new Response(JSON.stringify({ message: error.message }), {
       status: 500,
     });
   }

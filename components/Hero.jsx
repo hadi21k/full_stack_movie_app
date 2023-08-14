@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 const Hero = ({ media }) => {
   const router = useRouter();
   return (
-    <div className="min-h-[400px] flex gap-6 overflow-x-scroll scrollbar-none snap-x snap-mandatory sm:hidden">
+    <div className="min-h-[400px] flex gap-6 overflow-x-scroll scrollbar-none snap-x snap-mandatory max-sm:hidden">
       {media.map((m) => (
         <Image
           key={m.id}

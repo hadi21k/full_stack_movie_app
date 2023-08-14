@@ -52,7 +52,6 @@ const Media = ({ media, collectionId }) => {
             quality={100}
             className={`rounded-2xl w-full h-auto cursor-pointer
             ${loading && "hidden"}`}
-            priority={true}
             onLoadingComplete={() => setLoading(false)}
           />
           {loading && (
