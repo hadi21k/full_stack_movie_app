@@ -25,6 +25,9 @@ const Media = ({ media, collectionId }) => {
       console.error(error);
     }
   };
+  console.log(
+    (!pathname.includes("/collections") || pathname !== "/") && session? true : false
+  );
 
   return (
     <div
@@ -69,9 +72,10 @@ const Media = ({ media, collectionId }) => {
           <div>
             <h4 className="max-w-xs">{media.title}</h4>
           </div>
-          {!pathname.includes("/collections") && session && (
+          {(!pathname.includes("/collections") || pathname !== "/") &&
+          !session ? (
             <CollectionModal media={media} />
-          )}
+          ) : null}
           {pathname.includes("/collections") && session && (
             <div
               className="w-9 h-9 bg-white/10 text-white hover:bg-white/20 backdrop-filter backdrop-blur-2xl flex items-center justify-center rounded-full transition-colors duration-200 cursor-pointer"

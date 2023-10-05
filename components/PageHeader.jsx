@@ -7,7 +7,7 @@ const PageHeader = () => {
   const type = searchParams.get("type");
   return (
     <nav>
-      <ul className="flex space-x-4">
+      <ul className="flex space-x-4 select-none">
         <li
           className={`text-sm font-medium text-white cursor-pointer bg-primary px-2 py-1 rounded-xl hover:bg-primary/90 ${
             type === "movie" || !type ? "bg-primary/80" : ""

@@ -15,10 +15,9 @@ const MediaImage = ({ src, alt }) => {
     >
       <Image
         src={src}
+        height={1080}
+        width={1920}
         alt={alt}
-        quality={100}
-        fill
-        sizes="100vw"
         className="rounded-md h-auto w-auto"
         onLoadingComplete={() => setIsLoaded(false)}
       />
